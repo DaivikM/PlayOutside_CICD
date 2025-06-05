@@ -1,0 +1,11 @@
+pandas
+notebook
+ipykernel
+fastapi
+uvicorn
+pydantic
+pytest
+matplotlib
+seaborn
+scikit-learn
+streamlit

@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - MODEL_PATH=model_training/model.pkl
+      - ENCODER_PATH=model_training/label_encoders.pkl
+    restart: always
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    container_name: streamlit_ui
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    environment:
+      - API_URL=http://api:8000/predict/
+    restart: always
