@@ -2,6 +2,7 @@ import multiprocessing
 import uvicorn
 import sys
 
+# to run the api endpoints
 def run_api():
     uvicorn.run("api:app", host="127.0.0.1", port=8000, reload=True)
 
