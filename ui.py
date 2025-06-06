@@ -3,7 +3,7 @@ import requests
 
 # API_URL = "http://127.0.0.1:8000/predict/"  # Change if your FastAPI runs elsewhere
 import os
-API_URL = os.getenv("API_URL", "https://play-api.onrender.com/predict/")
+API_URL = os.getenv("API_URL", "http://127.0.0.1:8000/predict/")
 
 st.title("Play Outside Predictor")
 st.write("Enter the weather conditions to predict if you can play outside.")
